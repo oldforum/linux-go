@@ -11,10 +11,10 @@ sudo rm -rf /usr/local/go
 GO_LATEST=$(curl -s https://golang.org/VERSION?m=text)
 if [[ $GO_LATEST == go* ]]; then
     GO_URL="https://dl.google.com/go/${GO_LATEST}.linux-amd64.tar.gz"
-    
+
     # 打印出下载 URL
     echo "下载 URL: $GO_URL"
-    
+
     # 下载并解压 Go
     curl -L $GO_URL | sudo tar -C /usr/local -xzf -
 
