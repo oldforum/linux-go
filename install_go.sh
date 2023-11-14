@@ -8,7 +8,9 @@ sudo apt remove --autoremove golang-go
 sudo rm -rf /usr/local/go
 
 # 获取最新版本的 Go 二进制文件
-GO_LATEST=$(curl -s https://go.dev/VERSION?m=text | grep -oP 'go[0-9.]+')
+GO_LATEST=$(curl -L -s https://f5.lol/gover | grep -oP 'go[0-9.]+')
+# GO_LATEST=$(curl -s https://go.dev/VERSION?m=text | grep -oP 'go[0-9.]+')
+
 if [[ $GO_LATEST == go* ]]; then
     GO_URL="https://dl.google.com/go/${GO_LATEST}.linux-amd64.tar.gz"
 
